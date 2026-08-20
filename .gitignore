@@ -1,0 +1,8 @@
+.DS_Store
+*~
+*.swp
+*.swo
+*.qmlc
+*.jsc
+coverage/
+node_modules/

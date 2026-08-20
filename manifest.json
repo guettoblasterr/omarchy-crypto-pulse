@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.guettoblasterr.crypto-market-pulse",
+  "name": "Crypto Market Pulse",
+  "version": "1.0.0",
+  "author": "guettoblasterr",
+  "license": "MIT",
+  "description": "A compact crypto, DeFi sentiment, and U.S. Treasury market pulse.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Crypto Market Pulse",
+    "description": "Crypto prices, sentiment, DeFi activity, leverage, and Treasury context.",
+    "category": "Finance",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
