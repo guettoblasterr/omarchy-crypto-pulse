@@ -1,5 +1,6 @@
 var ASSET_ORDER = ["BTC", "ETH", "SOL", "HYPE", "ZEC"]
 var ASSET_IDS = { bitcoin: "BTC", ethereum: "ETH", solana: "SOL", hyperliquid: "HYPE", zcash: "ZEC" }
+var ASSET_LOGOS = { BTC: "assets/coins/btc.svg", ETH: "assets/coins/eth.svg", SOL: "assets/coins/sol.svg", HYPE: "assets/coins/hype.svg", ZEC: "assets/coins/zec.svg" }
 var CURVE_FLAT_THRESHOLD_BPS = 5
 
 function finiteNumber(value) {
@@ -16,11 +17,6 @@ function parseJson(raw) {
   } catch (error) { return null }
 }
 
-function validHttpsUrl(value) {
-  var text = typeof value === "string" ? value : ""
-  return /^https:\/\//i.test(text) ? text : ""
-}
-
 function changePercent(current, previous) {
   var now = finiteNumber(current)
   var before = finiteNumber(previous)
@@ -31,7 +27,11 @@ function changePercent(current, previous) {
 function emptyAsset(symbol) {
   var id = ""
   for (var key in ASSET_IDS) if (ASSET_IDS[key] === symbol) id = key
-  return { id: id, symbol: symbol, image: "", price: null, marketCap: null, change24h: null, change7d: null, updatedAt: "" }
+  return { id: id, symbol: symbol, price: null, marketCap: null, change24h: null, change7d: null, updatedAt: "" }
+}
+
+function assetLogo(symbol) {
+  return ASSET_LOGOS[String(symbol || "").toUpperCase()] || ""
 }
 
 function parseMarkets(raw) {
@@ -44,7 +44,6 @@ function parseMarkets(raw) {
     var symbol = row && ASSET_IDS[row.id]
     if (!symbol) continue
     var asset = emptyAsset(symbol)
-    asset.image = validHttpsUrl(row.image)
     asset.price = finiteNumber(row.current_price)
     asset.marketCap = finiteNumber(row.market_cap)
     asset.change24h = finiteNumber(row.price_change_percentage_24h_in_currency)
@@ -319,9 +318,11 @@ function freshness(lastSuccess, intervalMs, now) {
 
 if (typeof module !== "undefined") module.exports = {
   ASSET_ORDER: ASSET_ORDER,
+  ASSET_LOGOS: ASSET_LOGOS,
   CURVE_FLAT_THRESHOLD_BPS: CURVE_FLAT_THRESHOLD_BPS,
   finiteNumber: finiteNumber,
   parseJson: parseJson,
+  assetLogo: assetLogo,
   changePercent: changePercent,
   parseMarkets: parseMarkets,
   parseGlobal: parseGlobal,

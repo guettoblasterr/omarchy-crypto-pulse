@@ -477,8 +477,8 @@ Panel {
                       height: Style.space(16)
                       anchors.left: parent.left
                       anchors.verticalCenter: parent.verticalCenter
-                      source: assetRow.loaded ? assetRow.modelData.image : ""
-                      asynchronous: true
+                      source: Qt.resolvedUrl(Model.assetLogo(assetRow.symbol))
+                      sourceSize: Qt.size(width, height)
                       fillMode: Image.PreserveAspectFit
                     }
                     SmallText {

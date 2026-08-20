@@ -4,8 +4,8 @@ const Model = require('../Model.js');
 
 test('normalizes the fixed five-asset order, fields, and nulls', () => {
   const parsed = Model.parseMarkets([
-    { id: 'zcash', current_price: 55.25, market_cap: 900_000_000, price_change_percentage_24h: -2, price_change_percentage_7d_in_currency: 4, image: 'http://bad.test/zec.png' },
-    { id: 'bitcoin', current_price: 69_474.34, market_cap: 1_390_000_000_000, price_change_percentage_24h: 7.4, price_change_percentage_7d_in_currency: 9.5, image: 'https://example.test/btc.png' },
+    { id: 'zcash', current_price: 55.25, market_cap: 900_000_000, price_change_percentage_24h: -2, price_change_percentage_7d_in_currency: 4 },
+    { id: 'bitcoin', current_price: 69_474.34, market_cap: 1_390_000_000_000, price_change_percentage_24h: 7.4, price_change_percentage_7d_in_currency: 9.5 },
     { id: 'hyperliquid', current_price: null, market_cap: 15_000_000_000, price_change_percentage_24h: null, price_change_percentage_7d_in_currency: -3 },
     { id: 'solana', current_price: 84, market_cap: 49_000_000_000, price_change_percentage_24h: 0, price_change_percentage_7d_in_currency: null },
     { id: 'ethereum', current_price: 2257, market_cap: 272_000_000_000, price_change_percentage_24h_in_currency: 18.2, price_change_percentage_7d_in_currency: 20.5 }
@@ -15,7 +15,10 @@ test('normalizes the fixed five-asset order, fields, and nulls', () => {
   assert.equal(parsed.coins[1].change24h, 18.2);
   assert.equal(parsed.coins[3].price, null);
   assert.equal(parsed.coins[3].change24h, null);
-  assert.equal(parsed.coins[4].image, '');
+  assert.equal('image' in parsed.coins[4], false);
+  assert.equal(Model.assetLogo('BTC'), 'assets/coins/btc.svg');
+  assert.equal(Model.assetLogo('hype'), 'assets/coins/hype.svg');
+  assert.equal(Model.assetLogo('../unknown'), '');
   assert.equal(Model.parseMarkets('{broken'), null);
   assert.equal(Model.parseMarkets([{ id: 'unknown', current_price: 1 }]), null);
 });

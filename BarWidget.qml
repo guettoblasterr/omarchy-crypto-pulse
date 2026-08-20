@@ -93,9 +93,9 @@ BarWidget {
         Image {
           id: btcLogo
           anchors.fill: parent
-          source: root.btc ? root.btc.image : ""
+          source: Qt.resolvedUrl(Model.assetLogo("BTC"))
+          sourceSize: Qt.size(width, height)
           fillMode: Image.PreserveAspectFit
-          asynchronous: true
         }
 
         Text {

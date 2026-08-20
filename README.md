@@ -93,14 +93,14 @@ The plugin makes direct HTTPS requests to the following providers:
 
 | Provider | Data used |
 | --- | --- |
-| [CoinGecko](https://www.coingecko.com/) | Asset prices, logos, market caps, performance, global volume, and dominance |
+| [CoinGecko](https://www.coingecko.com/) | Asset prices, market caps, performance, global volume, and dominance |
 | [DefiLlama](https://defillama.com/) | DeFi TVL, stablecoin supply, DEX volume, and open interest |
 | [Alternative.me](https://alternative.me/crypto/fear-and-greed-index/) | Crypto Fear & Greed Index |
 | [Hyperliquid](https://hyperliquid.xyz/) | Perpetual-market 24-hour notional volume and market count |
 | [dRPC](https://drpc.org/) | Public Ethereum JSON-RPC gas price |
 | [U.S. Treasury](https://home.treasury.gov/resource-center/data-chart-center/interest-rates) | Official 2-year and 10-year daily Treasury yields |
 
-CoinGecko-provided asset logos are loaded from their HTTPS image URLs at runtime and are not bundled. The Fear & Greed gauge is original QML Canvas artwork. No third-party artwork is included in this repository.
+BTC, ETH, SOL, HYPE, and ZEC marks are bundled as fixed local SVG assets from [Web3 Icons](https://github.com/0xa3k5/web3icons) under the MIT License. They are used only to identify their respective assets; the marks remain the property of their respective owners. Exact provenance and license terms are recorded in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The plugin never downloads or decodes remote images. The Fear & Greed gauge is original QML Canvas artwork.
 
 ## Privacy and permissions
 

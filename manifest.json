@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.guettoblasterr.crypto-market-pulse",
   "name": "Crypto Market Pulse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "guettoblasterr",
   "license": "MIT",
   "description": "A compact crypto, DeFi sentiment, and U.S. Treasury market pulse.",
