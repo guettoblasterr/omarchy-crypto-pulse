@@ -1,6 +1,6 @@
 # Crypto Market Pulse — execution plan
 
-**Status:** Publication phase in progress
+**Status:** v1.0.0 published on GitHub; marketplace submission awaiting owner approval
 **Target:** Omarchy 4 / Quattro `bar-widget` (verified locally on Omarchy 4.0.0-1)
 **Repository:** `guettoblasterr/omarchy-crypto-pulse`
 **Plugin ID:** `io.github.guettoblasterr.crypto-market-pulse`
@@ -282,10 +282,10 @@ Goal: turn the working slice into a marketplace-ready public repository.
 - [x] Write the README: purpose, screenshots, installation, usage, refresh behaviour, network sources, attribution, removal, privacy, troubleshooting, and no-financial-advice notice.
 - [x] Add an MIT license and confirm no third-party assets are bundled.
 - [x] Capture `preview.png` from the real running plugin.
-- [ ] Run the complete validation suite and inspect the repository for marketplace security-baseline patterns.
+- [x] Run the complete validation suite and inspect the repository for marketplace security-baseline patterns.
 - [ ] Re-authenticate GitHub CLI if `gh auth status` still reports the current token as invalid.
-- [ ] Create the public GitHub repository `guettoblasterr/omarchy-crypto-pulse`, commit with Conventional Commits, push, and verify installation from the public URL.
-- [ ] Prepare the marketplace issue with category `Widgets` and tags `bar`, `quickshell`.
+- [x] Create the public GitHub repository `guettoblasterr/omarchy-crypto-pulse`, commit with Conventional Commits, push, and verify installation from the public URL.
+- [x] Prepare the marketplace issue with category `Widgets` and tags `bar`, `quickshell`.
 - [ ] Show the exact issue title, body, ownership declarations, and checklist to the user.
 - [ ] Submit to `HANCORE-linux/omarchy-plugin-marketplace` only after explicit final approval.
 
