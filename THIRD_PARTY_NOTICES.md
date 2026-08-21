@@ -2,7 +2,7 @@
 
 ## Web3 Icons
 
-The local BTC, ETH, SOL, HYPE, and ZEC SVG assets in `assets/coins/` are copied from the branded icons in [Web3 Icons](https://github.com/0xa3k5/web3icons) at commit `64e21e68cc6eaa36ff9d0a135ca2c809a759ccd6`. Whitespace and internal gradient identifiers may be minimized without changing their rendered appearance:
+The local BTC, ETH, SOL, HYPE, and ZEC SVG assets in `assets/coins/` are based on the branded icons in [Web3 Icons](https://github.com/0xa3k5/web3icons) at commit `64e21e68cc6eaa36ff9d0a135ca2c809a759ccd6`. BTC and ZEC add their familiar circular backgrounds, HYPE adds a dark rounded background for contrast, and ETH and SOL use tighter viewports for legibility at small sizes; whitespace and internal gradient identifiers may also be minimized:
 
 - `raw-svgs/tokens/branded/BTC.svg`
 - `raw-svgs/tokens/branded/ETH.svg`
